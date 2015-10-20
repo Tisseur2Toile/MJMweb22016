@@ -78,8 +78,56 @@ while ($a <= 10) {
     $a = $a + 2;
 }
 
+$monTest = "Je suis le meilleur...";
+
+function maFonction($cpt = 3, $sufixe = "Moi", $monTest) {
+    //global $monTest;
+    //  $monTest = "Il est le meilleur...";
+    for ($i=0; $i < $cpt; $i++) {
+        echo "Bonjour... Fonction - $sufixe // $monTest<br>";
+    }
+}
+maFonction(3, 'toi', $monTest);
 
 
-    echo "<pre>";
-    var_dump($myObj);
-    echo "</pre>";
+/**
+ * Definition d'objet...
+ */
+class couteauSuisse
+{
+    // -> Methode
+    function __construct($elements)
+    {
+        $this->lames = $elements;
+    }
+
+    function quellesSontMesLames()
+    {
+        foreach ($this->lames as $key => $value) {
+            echo "Lame $key : $value<br>";
+        }
+    }
+}
+
+?>
+<h1>Je pars à une soirée !</h1>
+<?php
+$elements = array('lame', 'decapsuleur', 'tire-bouchon');
+$monCouteau = new couteauSuisse($elements);
+$monCouteau->quellesSontMesLames();
+?>
+<h1>Je pars en camping !</h1>
+<?php
+$elements = array('lame', 'grande lame', 'briquet', 'cure-dents', 'machette');
+$monCouteauDeSurvie = new couteauSuisse($elements);
+$monCouteauDeSurvie->quellesSontMesLames();
+
+
+
+
+
+
+/*echo "<pre>";
+var_dump($monCouteau, $monCouteauDeSurvie);
+echo "</pre>";
+*/
